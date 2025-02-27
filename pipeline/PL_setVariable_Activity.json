@@ -1,0 +1,83 @@
+{
+	"name": "PL_setVariable_Activity",
+	"properties": {
+		"activities": [
+			{
+				"name": "SetA",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "A",
+					"value": 10
+				}
+			},
+			{
+				"name": "SetB",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "B",
+					"value": 5
+				}
+			},
+			{
+				"name": "SetC",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "SetA",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "SetB",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "C",
+					"value": {
+						"value": "@mul(variables('A'),variables('B'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"A": {
+				"type": "Integer"
+			},
+			"B": {
+				"type": "Integer"
+			},
+			"C": {
+				"type": "Integer"
+			},
+			"OutputFolder1": {
+				"type": "String",
+				"defaultValue": "output1"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-02-25T07:13:28Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

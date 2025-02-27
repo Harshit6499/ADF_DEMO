@@ -1,0 +1,9 @@
+{
+	"name": "UAE-AD",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "74a922b7-fb9e-47a3-bbb6-582b12d1f787",
+		"tenantId": "9eca818a-d964-4588-ae20-9ad67656cd6d"
+	}
+}

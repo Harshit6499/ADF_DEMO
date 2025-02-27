@@ -1,0 +1,73 @@
+{
+	"name": "DelimitedText1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_abs_webstore",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Webstore"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "AdminLogs.csv",
+				"folderPath": "raw",
+				"container": "poc"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "log_id",
+				"type": "String"
+			},
+			{
+				"name": "admin_id",
+				"type": "String"
+			},
+			{
+				"name": "user_id",
+				"type": "String"
+			},
+			{
+				"name": "action_type",
+				"type": "String"
+			},
+			{
+				"name": "action_details",
+				"type": "String"
+			},
+			{
+				"name": "action_status",
+				"type": "String"
+			},
+			{
+				"name": "timestamp",
+				"type": "String"
+			},
+			{
+				"name": "ip_address",
+				"type": "String"
+			},
+			{
+				"name": "device_used",
+				"type": "String"
+			},
+			{
+				"name": "location",
+				"type": "String"
+			},
+			{
+				"name": "notes",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
